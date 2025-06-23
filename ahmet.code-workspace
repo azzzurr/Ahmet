@@ -3,20 +3,28 @@ print("original :",l1)
 list_size = len(l1)
 
 print("range", list(range(0,list_size)))
-def sort_mylist(l1):
+
+def sort_mylist(l1,reverse=False):
     list_size = len(l1)
     for i in range(0,list_size):
         print("i",i)
         for k in range(i+1,list_size):
-            if l1[i] >= l1[k]:
-                q = l1[i]
-                l1[i] = l1[k]
-                l1[k] = q
+            
+            if reverse == True :
+                if l1[i] <= l1[k] :
+                    q = l1[i]
+                    l1[i] = l1[k]
+                    l1[k] = q
+            else :
+                
+                if l1[i] >= l1[k]:
+                    q = l1[i]
+                    l1[i] = l1[k]
+                    l1[k] = q
                 
     return l1
                 
 ll = sort_mylist(l1)
 print("Sorted list",ll)
-
+print("Sorted list reversed",sort_mylist(l1, reverse=True))
 sorted_list = sorted(l1)
-print("Yo i used a function for dis one" , sorted_list)
